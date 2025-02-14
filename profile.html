@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta http-equiv="Content-Language" content="en-US" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="/user-uploads/static-assets/favicon-ck.ico" />
+
+  <title>My Profile | Clankart</title>
+
+  <!--begin::Global Stylesheets Bundle(used by all pages)-->
+  <link rel='stylesheet' type='text/css' href='css/style.bundle.css' />
+  <link rel='stylesheet' type='text/css' href='plugins/plugins.bundle.css' media="print" onload="this.media='all'" />
+  <link rel='stylesheet' type='text/css' href='css/moonfonts.css' media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" media="print" onload="this.media='all'" />
+
+  <style>
+    .toast-info {
+      background-color: #50cd89 !important;
+    }
+  </style>
+
+  <!--end::Global Stylesheets Bundle(used by all pages)-->
+
+  
+
+
+  <meta name="ahrefs-site-verification" content="ab9400ea6a87ffed34ba5c7e6a60b3f3f2cf1525ee62174ef80f43f2104d7d1b">
+      <!-- begin::analytics -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Website",
+        "name": "Clankart",
+        "url": "https://www.clankart.com",
+        "sameAs": [
+          "https://www.facebook.com/clankart",
+          "https://twitter.com/clankartTeam",
+          "https://www.instagram.com/clankart"
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "schema.org",
+        "@type": "Organization",
+        "url": "https://www.clankart.com",
+        "logo": "https://www.clankart.com/user-uploads/static-assets/logo.png"
+      }
+    </script>
+  </head>
+
+<body id="body">
+
+  
+  
+
+<header class="header bg-white shadow-xs align-items-baseline align-items-sm-center fixed-top position-fixed">
+
+  <!-- begin:: header:container -->
+  <div class="container d-flex justify-content-center">
+
+    <div class="menu d-flex align-items-center me-3 d-lg-none" id="header_menu_mobile_toggle">
+              <i class="bi bi-list menu-icon"></i>
+          </div>
+
+    <div class="ms-2 d-flex flex-grow-1 flex-sm-grow-0">
+      <a class="navbar-brand me-10" href="/"><img src="/user-uploads/static-assets/logo.png" alt="Clankart Logo" class="logo-img" title="Buy and Sell Old Books Online In India For Cash | Clankart "></a>
+    </div>
+
+    <div class="d-flex">
+      <div class="w-sm-300px w-md-450px d-none d-sm-block me-5">
+        <div class="form-group">
+          <form action="/search" method="get">
+            <div class="input-group">
+              <input type="text" class="form-control border-primary search-adverts" placeholder="Book Name / Author / Subject / Publisher" autocomplete="off" value="" name="q" />
+              <button class="btn btn-primary border-primary d-none d-md-block border search-btn" type="submit">Search</button>
+              <button class="btn btn-primary border-primary bi bi-search search-btn d-md-none" type="submit"></button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- end::sm-search -->
+
+      <!-- begin:: +SELL button for specific pages on mobile only -->
+              <div class="post-adv-btn d-sm-none d-flex flex-center">
+          <a href="post-ad.html" class="text-dark btn-sm btn-secondary px-3 d-flex flex-center" title="Post Free Ad to sell your used books online for cash"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="12px" height="12px" viewBox="0 0 122.875 122.648" enable-background="new 0 0 122.875 122.648" xml:space="preserve">
+              <g>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M108.993,47.079c7.683-0.059,13.898,6.12,13.882,13.805 c-0.018,7.683-6.26,13.959-13.942,14.019L75.24,75.138l-0.235,33.73c-0.063,7.619-6.338,13.789-14.014,13.78 c-7.678-0.01-13.848-6.197-13.785-13.818l0.233-33.497l-33.558,0.235C6.2,75.628-0.016,69.448,0,61.764 c0.018-7.683,6.261-13.959,13.943-14.018l33.692-0.236l0.236-33.73C47.935,6.161,54.209-0.009,61.885,0 c7.678,0.009,13.848,6.197,13.784,13.818l-0.233,33.497L108.993,47.079L108.993,47.079z" />
+              </g>
+            </svg> <span class="ms-1 fw-bolder fs-7">SELL</span></a>
+        </div>
+            <!-- end:: +SELL button for specific pages on mobile only -->
+
+      <div class="post-adv-btn d-none d-sm-block me-8">
+        <a href="post-ad.html" class="text-dark btn btn-secondary w-lg-150px px-3 d-sm-none d-lg-block" title="Post Free Ad to sell your used books online for cash">Sell Used Books</a>
+        <a href="post-ad.html" class="text-dark btn btn-secondary px-3 d-flex flex-center d-sm-flex d-lg-none" title="Post Free Ad to sell your used books online for cash"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="12px" height="12px" viewBox="0 0 122.875 122.648" enable-background="new 0 0 122.875 122.648" xml:space="preserve">
+            <g>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M108.993,47.079c7.683-0.059,13.898,6.12,13.882,13.805 c-0.018,7.683-6.26,13.959-13.942,14.019L75.24,75.138l-0.235,33.73c-0.063,7.619-6.338,13.789-14.014,13.78 c-7.678-0.01-13.848-6.197-13.785-13.818l0.233-33.497l-33.558,0.235C6.2,75.628-0.016,69.448,0,61.764 c0.018-7.683,6.261-13.959,13.943-14.018l33.692-0.236l0.236-33.73C47.935,6.161,54.209-0.009,61.885,0 c7.678,0.009,13.848,6.197,13.784,13.818l-0.233,33.497L108.993,47.079L108.993,47.079z" />
+            </g>
+          </svg> <span class="ms-1">SELL</span></a>
+      </div>
+      <!-- end::post-adv-btn -->
+    </div>
+
+    <!-- begin::my account, cart icons on tab, desktop -->
+    <div class="d-flex d-none d-lg-flex" id="header_nav">
+      <div class="d-flex">
+        <ul class="navbar-nav d-flex flex-row mt-1">
+          <li class="">
+            <div class="cursor-pointer text-center me-5" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+              <!-- currently only for new msgs -->
+                              <i class="bi bi-person"></i>
+              
+              <div class="text-dark">My Account</div>
+            </div>
+
+            <!-- begin::my account menu/mobile side menu -->
+            <div class="menu menu-sub menu-sub-dropdown menu-column w-350px menu-state-primary" data-kt-menu="true" data-kt-drawer="true" data-kt-drawer-name="header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#header_menu_mobile_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#body', lg: '#header_nav'}">
+              <div class="menu-item border-bottom">
+                                    <a class="menu-link" href="" data-bs-toggle="modal" data-bs-target="#login-signup-modal">
+                      <i class="bi bi-lock me-6"></i>
+                      <span class="menu-title">Login/Sign Up</span>
+                    </a>
+                                </div>
+                            
+
+
+  <!-- begin::curated book categories -->
+  <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+
+    <!--begin:Menu link-->
+    <span class="menu-link a"><i class="bi bi-book me-6"></i><span class="menu-title">Browse Top Book Categories</span><span class="menu-arrow"></span></span>
+    <!--end:Menu link-->
+
+    <!--begin:Menu sub-->
+    <div class="menu-sub menu-sub-accordion" style="display: none; overflow: hidden;" kt-hidden-height="363">
+
+      <div class="menu-item">
+        <!--begin:Menu link-->
+        <a class="menu-link" href="/books/view-all" title="View All used Books on Clankart"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">View All Books</span></a>
+        <!--end:Menu link-->
+      </div>
+
+              <!--begin:Menu item-->
+        <div class="menu-item">
+          <!--begin:Menu link-->
+          <a class="menu-link" href="/books/arihant-books" title="Arihant Books: Buy Arihant Publications Books Online"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Arihant Books</span></a>
+          <!--end:Menu link-->
+        </div>
+        <!--end:Menu item-->
+              <!--begin:Menu item-->
+        <div class="menu-item">
+          <!--begin:Menu link-->
+          <a class="menu-link" href="/books/books-for-jee" title="Books For JEE Mains, Advanced, Books For IIT JEE Preparation"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Books for JEE</span></a>
+          <!--end:Menu link-->
+        </div>
+        <!--end:Menu item-->
+              <!--begin:Menu item-->
+        <div class="menu-item">
+          <!--begin:Menu link-->
+          <a class="menu-link" href="/books/cat-books" title="CAT Books: Buy CAT Preparation Books Online"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">CAT Books</span></a>
+          <!--end:Menu link-->
+        </div>
+        <!--end:Menu item-->
+              <!--begin:Menu item-->
+        <div class="menu-item">
+          <!--begin:Menu link-->
+          <a class="menu-link" href="/books/dictionary" title="Dictionary: Buy Used Dictionary Online | Clankart"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Dictionary</span></a>
+          <!--end:Menu link-->
+        </div>
+        <!--end:Menu item-->
+              <!--begin:Menu item-->
+        <div class="menu-item">
+          <!--begin:Menu link-->
+          <a class="menu-link" href="/books/encyclopedia" title="Encyclopedia: Buy Encyclopedia Books Online | Clankart"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Encyclopedia</span></a>
+          <!--end:Menu link-->
+        </div>
+        <!--end:Menu item-->
+              <!--begin:Menu item-->
+        <div class="menu-item">
+          <!--begin:Menu link-->
+          <a class="menu-link" href="/books/gate-books" title="Gate Books: Buy GATE Books For Exam Preparation Online"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Gate Books</span></a>
+          <!--end:Menu link-->
+        </div>
+        <!--end:Menu item-->
+              <!--begin:Menu item-->
+        <div class="menu-item">
+          <!--begin:Menu link-->
+          <a class="menu-link" href="/books/gmat-books" title="GMAT Preparation Books | Clankart"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">GMAT Books</span></a>
+          <!--end:Menu link-->
+        </div>
+        <!--end:Menu item-->
+              <!--begin:Menu item-->
+        <div class="menu-item">
+          <!--begin:Menu link-->
+          <a class="menu-link" href="/books/health-books" title="Health Books | Clankart"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Health</span></a>
+          <!--end:Menu link-->
+        </div>
+        <!--end:Menu item-->
+              <!--begin:Menu item-->
+        <div class="menu-item">
+          <!--begin:Menu link-->
+          <a class="menu-link" href="/books/history-archaeology-books" title="History Books"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">History & Archaeology Books</span></a>
+          <!--end:Menu link-->
+        </div>
+        <!--end:Menu item-->
+              <!--begin:Menu item-->
+        <div class="menu-item">
+          <!--begin:Menu link-->
+          <a class="menu-link" href="/books/made-easy-books" title="Made Easy Books: Buy Made Easy Books Online"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Made Easy Books</span></a>
+          <!--end:Menu link-->
+        </div>
+        <!--end:Menu item-->
+              <!--begin:Menu item-->
+        <div class="menu-item">
+          <!--begin:Menu link-->
+          <a class="menu-link" href="/books/mythology-books" title="Mythology Books: Buy Mythology Books, Novels Online | Clankart"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Mythology</span></a>
+          <!--end:Menu link-->
+        </div>
+        <!--end:Menu item-->
+              <!--begin:Menu item-->
+        <div class="menu-item">
+          <!--begin:Menu link-->
+          <a class="menu-link" href="/books/ncert-books" title="NCERT Books: Buy Old NCERT Books Online"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">NCERT Books</span></a>
+          <!--end:Menu link-->
+        </div>
+        <!--end:Menu item-->
+              <!--begin:Menu item-->
+        <div class="menu-item">
+          <!--begin:Menu link-->
+          <a class="menu-link" href="/books/politics-books" title="Politics Books"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Politics Books</span></a>
+          <!--end:Menu link-->
+        </div>
+        <!--end:Menu item-->
+              <!--begin:Menu item-->
+        <div class="menu-item">
+          <!--begin:Menu link-->
+          <a class="menu-link" href="/books/rd-sharma" title="RD Sharma Class 6, 7, 8, 9, 10, 11, 12"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">RD Sharma Books</span></a>
+          <!--end:Menu link-->
+        </div>
+        <!--end:Menu item-->
+              <!--begin:Menu item-->
+        <div class="menu-item">
+          <!--begin:Menu link-->
+          <a class="menu-link" href="/books/sl-arora-physics" title="SL Arora Physics Books: Buy Used S.L. Arora Physics Books"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">SL Arora Physics Books</span></a>
+          <!--end:Menu link-->
+        </div>
+        <!--end:Menu item-->
+      
+    </div><!--end:Menu sub-->
+
+  </div>
+  <!-- end::curated book categories -->
+
+<div class="menu-item">
+  <a class="menu-link active" href="/accounts/profile">
+    <i class="bi bi-person me-6"></i>
+    <span class="menu-title">My Profile</span>
+  </a>
+</div>
+<div class="menu-item">
+  <a class="menu-link " href="/accounts/myads">
+    <i class="bi bi-megaphone me-6"></i>
+    <span class="menu-title">My Ads</span>
+  </a>
+</div>
+<div class="menu-item">
+  <a class="menu-link " href="/accounts/myorders">
+    <i class="bi bi-box-seam me-6"></i>
+    <!-- <span class="menu-title">My Orders <span class="ms-2 badge badge-circle badge-primary"></span></span> -->
+    <span class="menu-title">My Orders</span>
+  </a>
+</div>
+<div class="menu-item">
+  <a class="menu-link " href="/accounts/mysellingorders">
+    <i class="bi bi-piggy-bank me-6"></i>
+            <span class="menu-title">My Selling Orders &nbsp; </span>
+        </a>
+</div>
+<div class="menu-item">
+  <a class="menu-link " href="/accounts/mychats">
+    <i class="bi bi-chat-dots me-6"></i>
+    <span class="menu-title">My Chats </span>
+  </a>
+</div>
+  <div class="menu-item">
+    <a class="menu-link " href="/cart">
+      <i class="bi bi-cart2 me-6"></i>
+      <span class="menu-title">Cart </span>
+    </a>
+  </div>
+<div class="menu-item">
+  <a class="menu-link " href="/accounts/wishlist">
+    <i class="bi bi-heart me-6"></i>
+    <span class="menu-title">Wishlist</span>
+  </a>
+</div>
+  <div class="menu-item">
+    <a class="menu-link " href="/how-it-works">
+      <i class="bi bi-question-circle me-6"></i>
+      <span class="menu-title">How it Works?</span>
+    </a>
+  </div>
+  <a class="menu-link d-md-none btn btn-secondary px-6 align-self-center text-nowrap col-auto " href="post-ad.html">Sell your used books</a>
+            </div>
+            <!-- end::my account menu/mobile side menu -->
+
+          </li>
+          <li class="">
+            <a href="/cart" class="d-block text-dark" alt="Cart">
+              <i alt="Cart" class="bi bi-cart2 position-relative"></i>
+              <div class="dark">Cart</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- end::my account, cart icons on tab, desktop -->
+
+    <!-- begin::search, cart icons on mobile -->
+    <div class="d-flex d-sm-none">
+      <ul class="navbar-nav d-flex flex-row align-items-center">
+        <li id="kt_header_search" class="xs-search-li ms-3 text-end cursor-pointer" data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter" data-kt-search-layout="menu" data-kt-menu-trigger="auto" data-kt-menu-overflow="false" data-kt-menu-permanent="true" data-kt-menu-placement="bottom-end" data-kt-search="true">
+          <div id="kt_header_search_toggle" class="text-right btn btn-icon btn-active-light-primary" data-kt-search-element="toggle" id="kt_header_search_toggle">
+            <i class="bi bi-search"></i>
+          </div>
+
+          <div class="xs-search justify-content-center flex-row w-100 menu menu-sub menu-sub-dropdown" data-kt-search-element="content">
+            <div class="input-group">
+              <form action="/search" method="get" class="d-flex w-100">
+                <input type="text" class="form-control border-primary w-90 search-adverts" data-kt-search-element="input" placeholder="Book Name / Author / Subject / Publisher" autocomplete="off" name="q" value="" />
+                <button class="btn btn-primary border-primary border search-btn" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </li>
+        </li>
+        <li class="ms-2 text-end">
+          <a href="/cart" class="text-dark">
+            <i class="bi bi-cart2 position-relative"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- end::search, cart icons on mobile -->
+
+  </div>
+  <!-- end:: header:container -->
+
+</header>  
+  
+
+  <!-- begin::Google Adsense Code -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3487125379538998" crossorigin="anonymous"></script>
+  <!-- end::Google Adsense Code -->
+
+<div class="main-body">
+
+  
+  
+
+  <section class="section-content pb-10 py-md-10">
+    <div class="container card">
+      <div class="row">
+        <aside class="col-md-3">
+          <div class="d-block d-md-none p-4">
+            <a class="btn btn-outline btn-outline-primary btn-outline-default btn-icon-primary btn-active-icon-white btn-active-text-white d-block collapsed" href="#account-menu" data-bs-toggle="collapse" aria-expanded="false">
+              <i class="bi bi-list"></i>Account Menu
+            </a>
+          </div>
+          <div class="mb-2">
+            <div class="d-md-block collapse menu-state-primary" id="account-menu">
+              
+
+
+
+<div class="menu-item">
+  <a class="menu-link active" href="/accounts/profile">
+    <i class="bi bi-person me-6"></i>
+    <span class="menu-title">My Profile</span>
+  </a>
+</div>
+<div class="menu-item">
+  <a class="menu-link " href="/accounts/myads">
+    <i class="bi bi-megaphone me-6"></i>
+    <span class="menu-title">My Ads</span>
+  </a>
+</div>
+<div class="menu-item">
+  <a class="menu-link " href="/accounts/myorders">
+    <i class="bi bi-box-seam me-6"></i>
+    <!-- <span class="menu-title">My Orders <span class="ms-2 badge badge-circle badge-primary"></span></span> -->
+    <span class="menu-title">My Orders</span>
+  </a>
+</div>
+<div class="menu-item">
+  <a class="menu-link " href="/accounts/mysellingorders">
+    <i class="bi bi-piggy-bank me-6"></i>
+            <span class="menu-title">My Selling Orders &nbsp; </span>
+        </a>
+</div>
+<div class="menu-item">
+  <a class="menu-link " href="/accounts/mychats">
+    <i class="bi bi-chat-dots me-6"></i>
+    <span class="menu-title">My Chats </span>
+  </a>
+</div>
+<div class="menu-item">
+  <a class="menu-link " href="/accounts/wishlist">
+    <i class="bi bi-heart me-6"></i>
+    <span class="menu-title">Wishlist</span>
+  </a>
+</div>
+            </div>
+          </div>
+        </aside>
+        <section class="col-md-9 mb-5">
+          
+          <section id="profile-section" class="col-md-9 mb-5">
+            <h1 class="text-light-dark">My Profile</h1>
+            <form id="update-profile-form">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required />
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required />
+              </div>
+              <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <textarea id="address" name="address" class="form-control" placeholder="Enter your address" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Update Profile</button>
+            </form>
+          </section>
+          
+
+<div class="py-5">
+  <h1 class="text-light-dark">Change your profile</h1>
+
+  <ul class="nav nav-tabs nav-line-tabs mb-5 fs-6">
+    <li class="nav-item">
+      <a class="nav-link d-flex flex-center active" data-bs-toggle="tab" href="#change_profile"><i class="fw-bolder bi bi-person fs-4 m-0 me-1 w-auto"></i> Change Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link d-flex flex-center" data-bs-toggle="tab" href="#change_password"><i class="fw-bolder bi bi-key fs-4 m-0 me-1 w-auto"></i> Change Password</a>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="change_profile" role="tabpanel">
+
+      
+  </div>
+</div>        </section>
+      </div>
+    </div>
+
+   
+  </section>
+
+</div>
+
+      <a href="post-ad.html" class="btn btn-primary rounded-0 position-fixed left-0 bottom-0 w-100 py-5 d-sm-none fs-3 z-index-1">
+      <h2 class="text-white d-flex flex-center text-center"><i class="bi bi-currency-rupee"></i> Sell your used books</h2>
+    </a>
+  
+    <!--begin::Close-->
+          <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+        <i class="bi bi-x"></i>
+      </div>
+        <!--end::Close-->
+  </div>
+  <!-- end::modal-header -->
+
+  <!-- begin::modal-body -->
+  <div class="modal-body">
+    <div class="tab-content" id="myTabContent">
+       <!--begin::Modal Body Overlay-->
+  <div class="modal fade captcha-modal" id="" tabindex="-1" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content modal-content">
+        <div class="modal-header py-5">
+          <h5 class="modal-title" id="exampleModalLabel">Please verify this captcha to proceed</h5>
+
+          <!--begin::Close-->
+          <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+            <span class="svg-icon svg-icon-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black"></rect>
+                <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black"></rect>
+              </svg>
+            </span>
+          </div>
+          <!--end::Close-->
+        </div>
+
+        <div class="modal-body bg-light d-flex flex-center">
+          <div class="modal-body-fill"></div>
+
+          <!--begin::Overlay Layer-->
+          <div class="overlay-layer bg-dark bg-opacity-5">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+          <!--end::Overlay Layer-->
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!--end::Modal Body Overlay-->
+  <!-- end:: captcha modal -->
+
+  
+<footer class="footer pt-10">
+  <div class="container">
+    <div class="row pb-2">
+
+      <!-- begin::about us -->
+      <div class="col-md-4 mb-4 col-sm-6">
+        <div class="menu-content text-muted pb-4 text-uppercase fs-5">About Us</div>
+        <ul class="list-unstyled">
+          <li><a href="/about-us" class="pb-5 fs-5">About Us</a></li>
+          <li><a href="/contact-us" class="pb-5 fs-5">Contact Us</a></li>
+          <li><a href="/feedback" class="pb-5 fs-5">Leave Us Feedback</a></li>
+          <li><a href="/blog" class="pb-5 fs-5">Blog</a></li>
+          <!-- <li><a href="advertise">Advertise With Us</a></li> -->
+        </ul>
+      </div>
+      <!-- end::about us -->
+
+      <!-- begin::useful links -->
+      <div class="col-md-4 mb-4 col-sm-6">
+        <div class="menu-content text-muted pb-4 text-uppercase fs-5">Useful Links</div>
+        <ul class="list-unstyled">
+          <li><a href="/how-it-works" class="pb-5 fs-5">How it works?</a></li>
+          <li><a href="/teleport" class="pb-5 fs-5">Clankart Teleport</a></li>
+          <li><a href="/faq" class="pb-5 fs-5">Frequently Asked Questions (FAQs)</a></li>
+          <li><a href="/chat-guidelines" class="pb-5 fs-5">Chat Guidelines</a></li>
+          <li class="footer-link-c terms-about" class="pb-5 fs-5"><a href="/terms" class="pb-5 fs-5">Terms Of Use</a> / <a href="/listing-policy" class="pb-5 fs-5">Listing Policy</a> / <a href="/privacy-policy" class="pb-5 fs-5">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <!-- end::useful links -->
+
+      <!-- begin::stay connected -->
+      <div class="col-md-4">
+        <div class="menu-content text-muted pb-4 text-uppercase fs-5">Stay Connected</div>
+                <!-- begin::social links -->
+        <div class="social-links pb-2 mb-4">
+          <div class="symbol-list d-flex flex-wrap">
+            <div class="symbol mr-3">
+              <a href="https://www.facebook.com/clankart/" target="_blank" rel="noopener noreferrer"><i class="symbol-label bi bi-facebook facebook" alt="Clankart on Facebook"></i></a>
+            </div>
+            <div class="symbol mr-3">
+              <a href="https://www.instagram.com/clankart/" target="_blank" rel="noopener noreferrer"><i class="symbol-label bi bi-instagram instagram" alt="Clankart on Instagram"></i></a>
+            </div>
+            <div class="symbol mr-3">
+              <a href="https://www.youtube.com/@clankart" target="_blank" rel="noopener noreferrer"><i class="symbol-label bi bi-youtube youtube" alt="Clankart on Youtube"></i></a>
+            </div>
+            <div class="symbol mr-3">
+              <a href="https://twitter.com/clankartTeam" target="_blank" rel="noopener noreferrer"><i class="symbol-label bi bi-twitter twitter" alt="Clankart on Twitter"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- end::social links -->
+      </div>
+      <!-- end::stay connected -->
+
+    </div>
+  </div>
+
+  <div class="pt-5">
+    <div class="container pb-15 pb-sm-0">
+      <div class="row justify-content-between pb-3">
+        <div class="col-md-3 col-sm-6 mb-6">
+          <div class="d-flex"><i class="bi bi-credit-card text-dark"></i>
+            <div class="ps-3">
+              <span class="fs-3 text-dark mb-1">Secure Payment</span>
+              <p class="mb-0 fs-ms text-gray-900">100% Secure Online Transaction</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-6">
+          <div class="d-flex"><i class="bi bi-patch-check text-dark"></i>
+            <div class="ps-3">
+              <span class="fs-3 text-dark mb-1">Clankart Trust</span>
+              <p class="mb-0 fs-ms text-gray-700">Money stored safely & is transferred to the seller only after buyer confirmation</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-6">
+          <div class="d-flex"><i class="bi bi-chat-dots text-dark"></i>
+            <div class="ps-3">
+              <span class="fs-3 text-dark mb-1">Customer Support</span>
+              <p class="mb-0 fs-ms text-gray-700">Friendly customer support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="hr-light mb-5">
+      <div class="row text-center text-md-start">
+        <p>Clankart is a free platform where you can buy second hand books at very cheap prices. Well at Clankart, you can also sell used books online in India for actual cash. Buy used books online like college books, school books, reading books, much more near you.</p>
+      </div>
+      <hr class="hr-light mb-5">
+      <div class="row text-center text-md-start">
+        <div class="col-md-6 col-sm-6 padding-top-10 mb-5">Copyright © 2025, <b>Clankart™ </b>All Rights Reserved</span></div>
+        <div class="col-md-6 col-sm-6">
+          <ul class="list-unstyled d-flex accepted-payments justify-content-center justify-content-md-end">
+            <li><svg class="icon icon--full-color" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24" aria-labelledby="pi-visa">
+                <title id="pi-visa">Visa</title>
+                <path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path>
+                <path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path>
+                <path d="M28.3 10.1H28c-.4 1-.7 1.5-1 3h1.9c-.3-1.5-.3-2.2-.6-3zm2.9 5.9h-1.7c-.1 0-.1 0-.2-.1l-.2-.9-.1-.2h-2.4c-.1 0-.2 0-.2.2l-.3.9c0 .1-.1.1-.1.1h-2.1l.2-.5L27 8.7c0-.5.3-.7.8-.7h1.5c.1 0 .2 0 .2.2l1.4 6.5c.1.4.2.7.2 1.1.1.1.1.1.1.2zm-13.4-.3l.4-1.8c.1 0 .2.1.2.1.7.3 1.4.5 2.1.4.2 0 .5-.1.7-.2.5-.2.5-.7.1-1.1-.2-.2-.5-.3-.8-.5-.4-.2-.8-.4-1.1-.7-1.2-1-.8-2.4-.1-3.1.6-.4.9-.8 1.7-.8 1.2 0 2.5 0 3.1.2h.1c-.1.6-.2 1.1-.4 1.7-.5-.2-1-.4-1.5-.4-.3 0-.6 0-.9.1-.2 0-.3.1-.4.2-.2.2-.2.5 0 .7l.5.4c.4.2.8.4 1.1.6.5.3 1 .8 1.1 1.4.2.9-.1 1.7-.9 2.3-.5.4-.7.6-1.4.6-1.4 0-2.5.1-3.4-.2-.1.2-.1.2-.2.1zm-3.5.3c.1-.7.1-.7.2-1 .5-2.2 1-4.5 1.4-6.7.1-.2.1-.3.3-.3H18c-.2 1.2-.4 2.1-.7 3.2-.3 1.5-.6 3-1 4.5 0 .2-.1.2-.3.2M5 8.2c0-.1.2-.2.3-.2h3.4c.5 0 .9.3 1 .8l.9 4.4c0 .1 0 .1.1.2 0-.1.1-.1.1-.1l2.1-5.1c-.1-.1 0-.2.1-.2h2.1c0 .1 0 .1-.1.2l-3.1 7.3c-.1.2-.1.3-.2.4-.1.1-.3 0-.5 0H9.7c-.1 0-.2 0-.2-.2L7.9 9.5c-.2-.2-.5-.5-.9-.6-.6-.3-1.7-.5-1.9-.5L5 8.2z" fill="#142688"></path>
+              </svg>
+            </li>
+            <li><svg class="icon icon--full-color" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24" aria-labelledby="pi-master">
+                <title id="pi-master">Mastercard</title>
+                <path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path>
+                <path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path>
+                <circle fill="#EB001B" cx="15" cy="12" r="7"></circle>
+                <circle fill="#F79E1B" cx="23" cy="12" r="7"></circle>
+                <path fill="#FF5F00" d="M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z"></path>
+              </svg></li>
+            <li><svg class="icon icon--full-color" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" width="38" height="24" role="img" aria-labelledby="pi-rupay">
+                <title id="pi-rupay">RuPay</title>
+                <g fill="none" fill-rule="evenodd">
+                  <rect stroke-opacity=".07" stroke="#000" fill="#FFF" x=".5" y=".5" width="37" height="23" rx="3"></rect>
+                  <path fill="#097A44" d="M32 15.77l2-7.41 2 3.82z"></path>
+                  <path fill="#F46F20" d="M30.76 15.79l2-7.4 2 3.82z"></path>
+                  <path d="M20.67 8.2a2 2 0 0 0-1.56-.56h-3l-1.95 6.81h1.75l.66-2.31h1.23a3.4 3.4 0 0 0 1.9-.5 2.93 2.93 0 0 0 1.12-1.72 1.77 1.77 0 0 0-.15-1.72zm-3.21.94h1.12a.76.76 0 0 1 .55.15c.11.11.07.35 0 .53a1.08 1.08 0 0 1-.4.62 1.21 1.21 0 0 1-.7.2H17l.46-1.5zM9.14 9a1.64 1.64 0 0 0-.2-.61 1.3 1.3 0 0 0-.58-.53 2.75 2.75 0 0 0-1.08-.18H4l-2 6.75h1.73l.72-2.52H5.7c.47 0 .58.1.6.13.02.03.09.15 0 .65l-.16.6a3.35 3.35 0 0 0-.11.59v.55h1.79l.12-.43-.11-.08s-.07-.05-.06-.2c.027-.19.07-.377.13-.56l.1-.42a2.14 2.14 0 0 0 .1-1.11.88.88 0 0 0-.26-.41 2 2 0 0 0 .68-.54 2.79 2.79 0 0 0 .53-1c.07-.22.101-.45.09-.68zm-1.86.83a.84.84 0 0 1-.5.6 1.79 1.79 0 0 1-.64.09H4.86l.38-1.33h1.43a1.1 1.1 0 0 1 .53.09c.05 0 .21.07.08.5v.05zm4.9 2.17a2.11 2.11 0 0 1-.3.67 1 1 0 0 1-.87.43c-.34 0-.36-.14-.38-.2a1.24 1.24 0 0 1 .07-.52l.89-3.11H9.9l-.86 3a3 3 0 0 0-.15 1.32c.08.42.4.91 1.41.91.247.004.493-.03.73-.1a2.51 2.51 0 0 0 .6-.29l-.08.3h1.62l1.47-5.13H13L12.18 12zm12.93 1.1l.63-2.18c.24-.83-.07-1.21-.37-1.39A2.75 2.75 0 0 0 24 9.2a2.87 2.87 0 0 0-2 .68 2.75 2.75 0 0 0-.69 1.1l-.09.26h1.61v-.11a1.15 1.15 0 0 1 .25-.37.84.84 0 0 1 .56-.17.89.89 0 0 1 .46.08v.18c0 .06 0 .15-.25.23a2.13 2.13 0 0 1-.48.1l-.44.05a4 4 0 0 0-1.25.32c-.57.271-.99.78-1.15 1.39a1.25 1.25 0 0 0 .17 1.22c.289.307.7.468 1.12.44a2.43 2.43 0 0 0 1.07-.25l.4-.23v.33H25l.13-.48-.13-.07a.61.61 0 0 1 0-.22c0-.25.07-.43.11-.58zm-2.92-.1a.62.62 0 0 1 .34-.4 2.17 2.17 0 0 1 .57-.15l.29-.05.3-.07v.07a1.24 1.24 0 0 1-.51.75 1.44 1.44 0 0 1-.72.21.34.34 0 0 1-.25-.08.55.55 0 0 1-.02-.28zm7.91-3.68l-1.69 3v-3h-1.8l.39 5.13-.12.19a.8.8 0 0 1-.23.25.64.64 0 0 1-.24.08h-.68l-.39 1.37h.83a2 2 0 0 0 1.29-.34 9.55 9.55 0 0 0 1.27-1.71l3.17-5-1.8.03z" fill="#302F82"></path>
+                </g>
+              </svg></li>
+            <li><svg class="icon icon--full-color" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" width="38" height="24" role="img" aria-labelledby="pi-paytm">
+                <title id="pi-paytm">Paytm</title>
+                <rect x=".5" y=".5" width="37" height="23" rx="3" ry="3" fill="#fff" stroke="#000" stroke-opacity=".07"></rect>
+                <path d="M14.17 13.32v2.6a.87.87 0 0 1-.74.91h-2.7a1.83 1.83 0 0 1-2-1.9 14.66 14.66 0 0 1 .06-2.08 1.81 1.81 0 0 1 1.69-1.54h1.19a.31.31 0 0 0 .34-.41.33.33 0 0 0-.23-.41H10c-.38 0-.46-.08-.46-.47V8.91a.3.3 0 0 1 .25-.35h2.39a1.87 1.87 0 0 1 1.92 2.1c.08.91.07 1.79.07 2.66zm-3.32 1.34a.34.34 0 0 0 .31.36h.61a.33.33 0 0 0 .36-.35v-1.13c0-.3-.16-.36-.72-.36s-.53.1-.56.37v1.11zm9.58-2.73v2.81a2 2 0 0 1-1.85 2.15h-2.45c-.34 0-.42-.07-.42-.42v-1.26a.3.3 0 0 1 .29-.35h2a.32.32 0 0 0 .36-.34.33.33 0 0 0-.31-.35h-1a1.94 1.94 0 0 1-2-1.86V9a.32.32 0 0 1 .26-.37h1.34c.34 0 .42.1.42.45v2.6c0 .45.1.54.55.54h.05c.62 0 .67-.05.67-.66V9a.36.36 0 0 1 .45-.5H20a.36.36 0 0 1 .42.42c.01 1.08.01 2.02.01 3.01zM4.57 14.48v1.94c0 .46-.06.51-.52.51H2.87a.3.3 0 0 1-.36-.36V9a.28.28 0 0 1 .22-.32H6.2a1.66 1.66 0 0 1 1.62 1.61 17.62 17.62 0 0 1 0 2.49 1.74 1.74 0 0 1-1.73 1.74H4.57zm0-2.08h.86a.32.32 0 0 0 .32-.31V11a.32.32 0 0 0-.28-.35h-.88v1.74z" fill="#22346c"></path>
+                <path d="M28.94 9a2.2 2.2 0 0 1 2.86.1 7.28 7.28 0 0 1 1.15-.51 2.08 2.08 0 0 1 2.56 2v5.83c0 .36-.09.45-.45.45h-1.15a.35.35 0 0 1-.42-.42v-5.24a.6.6 0 0 0-.79-.64.55.55 0 0 0-.49.58v5.4a.31.31 0 0 1-.25.36h-1.43a.3.3 0 0 1-.35-.31v-5.43a.48.48 0 0 0-.29-.55 1.38 1.38 0 0 0-.71 0 .48.48 0 0 0-.26.53v5.21c0 .48-.06.55-.56.55h-1c-.36 0-.42-.08-.42-.44V9c0-.42.06-.47.46-.47h1.09a.42.42 0 0 1 .45.47zm-5.43 1.64h-.77a.33.33 0 0 1-.41-.4V9a.31.31 0 0 1 .25-.36h.1a2 2 0 0 0 1.74-1 2 2 0 0 1 .58-.57c.24-.16.42 0 .44.27v1.27h.7a.36.36 0 0 1 .42.42v1.22a.35.35 0 0 1-.42.42h-.66v5.83c0 .42-.07.48-.47.49h-1.09a.34.34 0 0 1-.42-.42c.01-1.87.01-5.78.01-5.92z" fill="#24b8eb"></path>
+              </svg></li>
+            <li><svg class="icon icon--full-color" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" width="38" height="24" role="img">
+                <title id="pi-rupay">UPI</title>
+                <g fill="none" fill-rule="evenodd">
+                  <rect stroke-opacity=".07" stroke="#000" fill="#FFF" x=".5" y=".5" width="37" height="23" rx="3"></rect>
+                  <path stroke="null" fill="#097939" d="m30.34233,16.26593l4.55316,-4.15354l-2.15672,-4.29692l-2.39643,8.45046z" />
+                  <path stroke="null" fill="#ed752e" d="m28.80872,16.26593l4.55316,-4.15354l-2.15672,-4.29692l-2.39643,8.45046z" />
+                  <path stroke="null" fill="#747474" d="m7.04945,7.86347l-1.91702,6.82719l6.80557,0.04769l1.86933,-6.87488l1.72532,0l-2.24129,7.99234c-0.08584,0.3052 -0.41265,0.55317 -0.72961,0.55317l-8.72323,0c-0.52901,0 -0.84247,-0.41329 -0.69941,-0.92195l2.13765,-7.62356l1.77269,0zm21.04015,-0.04769l1.72532,0l-2.39643,8.5932l-1.77396,0l2.44507,-8.5932zm-12.36492,3.58034l8.6269,-0.04769l0.57542,-1.81433l-8.77123,0l0.5271,-1.67095l9.34665,-0.08584c0.58178,-0.0054 0.92831,0.44508 0.77507,1.00683l-0.88062,3.21856c-0.15355,0.56144 -0.75028,1.01637 -1.33206,1.01637l-7.71703,0l-0.90987,3.53297l-1.67858,0l1.43824,-5.15592z" />
+                </g>
+              </svg></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>
+  <!--begin::Javascript-->
+  <!--begin::Global Javascript Bundle(used by all pages)-->
+  <script src="plugins/plugins.bundle.js"> </script>
+  <script src="js/scripts.bundle.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+  <script src="js/custom/default.js"></script>
+  <script src="js/custom/vendor/jquery.countdown.js"></script>
+  <!-- <script src="js/custom/clankart/vendor/typeahead/src/typeahead/typehead.js?v="></script> -->
+  <!-- <script src="js/custom/clankart/vendor/typeahead/src/bloodhound/bloodhound.js?v="></script> -->
+  <!-- BELOW SUGGESTIONS FUNCTIONING IS STOPPED -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/bloodhound.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.jquery.min.js"></script> -->
+  <!-- ABOVE SUGGESTIONS FUNCTIONING IS STOPPED -->
+
+  
+  <!--end::Global Javascript Bundle-->
+  <!--end::Javascript-->
+  <!--begin::Javascript-->
+<!--begin::Local Javascript Bundle-->
+<script src="/profile.js"></script>
+<!--end::Local Javascript Bundle-->
+<!--end::Javascript-->
+
+</body>
+
+</html>

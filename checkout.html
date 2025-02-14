@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+
+    .checkout-container {
+      margin: 50px auto;
+      max-width: 600px;
+      background: white;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .book-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .price-tag {
+      font-size: 1.25rem;
+      color: #28a745;
+      font-weight: bold;
+    }
+
+    .checkout-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .checkout-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="checkout-container">
+    <h2>Checkout</h2>
+    <div id="book-details">
+      <!-- Book details will be dynamically loaded here -->
+    </div>
+    <button class="checkout-btn" id="confirm-purchase">Confirm Purchase</button>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const bookId = urlParams.get('bookId');
+
+      if (!bookId) {
+        document.getElementById('book-details').innerHTML = '<p>No book selected for checkout.</p>';
+        return;
+      }
+
+      fetch(`/api/book/${bookId}`)
+        .then(response => response.json())
+        .then(book => {
+          if (!book || Object.keys(book).length === 0) {
+            document.getElementById('book-details').innerHTML = '<p>Book details not found.</p>';
+            return;
+          }
+
+          document.getElementById('book-details').innerHTML = `
+            <p class="book-title">${book.title}</p>
+            <p><strong>Author:</strong> ${book.author || "N/A"}</p>
+            <p class="price-tag">Price: ₹${book.price || "Not listed"}</p>
+          `;
+
+          document.getElementById('confirm-purchase').addEventListener('click', () => {
+            completePurchase(bookId);
+          });
+        })
+        .catch(error => {
+          console.error('Error loading book details:', error);
+          document.getElementById('book-details').innerHTML = '<p>Error loading book details.</p>';
+        });
+    });
+
+    function completePurchase(bookId) {
+      fetch('/buy-book', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ bookId })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert('✅ Purchase successful!');
+          window.location.href = '/index.html'; // Redirect to homepage or orders page
+        } else {
+          alert(`❌ Purchase failed: ${data.message}`);
+        }
+      })
+      .catch(error => {
+        console.error('Error during purchase:', error);
+        alert('❌ Failed to complete the purchase.');
+      });
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

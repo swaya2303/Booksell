@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Messages</title>
+    <style>
+        #chat-list { max-width: 400px; margin-bottom: 20px; }
+        .chat-item { padding: 10px; border-bottom: 1px solid #ddd; cursor: pointer; }
+        .chat-item:hover { background-color: #f0f0f0; }
+        #chat-box { height: 300px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Messages</h2>
+    <div id="chat-list"></div>
+    <div id="chat-box"></div>
+    <input type="text" id="message" placeholder="Type a message..."/>
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        const sellerId = sessionStorage.getItem('userId'); // Get logged-in seller ID
+        let activeChatUserId = "";  // Stores the selected buyer's ID
+
+        if (!sellerId) {
+            alert("You must be logged in!");
+            window.location.href = "/login.html";
+        }
+
+        async function loadChats() {
+            const response = await fetch(`/chat/conversations?sellerId=${sellerId}`);
+            const conversations = await response.json();
+
+            const chatList = document.getElementById("chat-list");
+            chatList.innerHTML = "";
+
+            conversations.forEach(chat => {
+                const div = document.createElement("div");
+                div.className = "chat-item";
+                div.textContent = `Chat with Buyer ${chat.buyerId}`;
+                div.onclick = () => loadMessages(chat.buyerId);
+                chatList.appendChild(div);
+            });
+        }
+
+        async function loadMessages(buyerId) {
+            activeChatUserId = buyerId;
+            const response = await fetch(`/chat/messages?senderId=${sellerId}&receiverId=${buyerId}`);
+            const messages = await response.json();
+
+            const chatBox = document.getElementById("chat-box");
+            chatBox.innerHTML = "";
+
+            messages.forEach(msg => {
+                const div = document.createElement("div");
+                div.className = "message";
+                div.innerHTML = `<strong>${msg.senderId === sellerId ? "You" : "Buyer"}:</strong> ${msg.message}`;
+                chatBox.appendChild(div);
+            });
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        async function sendMessage() {
+            const message = document.getElementById("message").value;
+            if (!message || !activeChatUserId) return;
+
+            await fetch('/chat/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ senderId: sellerId, receiverId: activeChatUserId, message })
+            });
+
+            document.getElementById("message").value = "";
+            loadMessages(activeChatUserId);
+        }
+
+        loadChats();
+        setInterval(() => { if (activeChatUserId) loadMessages(activeChatUserId); }, 3000);
+    </script>
+</body>
+</html>

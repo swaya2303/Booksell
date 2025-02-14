@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Cart</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .cart-container {
+      margin-top: 50px;
+    }
+
+    .cart-header {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+
+    .total {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .checkout-btn {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container cart-container">
+    <h1 class="cart-header">My Cart</h1>
+    <div id="cart-items">
+      <!-- Cart items will be dynamically inserted here -->
+    </div>
+    <div id="cart-total" class="text-end total mt-3">Total: ₹0</div>
+    <button id="checkout-btn" class="btn btn-primary checkout-btn" disabled>Checkout</button>
+  </div>
+  <script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  const loggedInUserId = sessionStorage.getItem("userId");
+
+  if (!loggedInUserId) {
+    alert("You must be logged in to access your cart.");
+    window.location.href = "/login.html";
+    return;
+  }
+
+  const cartKey = `cart_${loggedInUserId}`;
+  let cartItems = JSON.parse(localStorage.getItem(cartKey)) || [];
+  const cartContainer = document.getElementById("cart-items");
+  const cartTotalElement = document.getElementById("cart-total");
+  const checkoutButton = document.getElementById("checkout-btn");
+
+  function renderCart() {
+  cartContainer.innerHTML = "";
+  let total = 0;
+
+  if (cartItems.length === 0) {
+    cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+    cartTotalElement.textContent = "Total: ₹0";
+    checkoutButton.disabled = true;
+    return;
+  }
+
+  cartItems.forEach((item, index) => {
+    total += parseFloat(item.price); // Ensure prices are added as numbers
+
+    const cartItem = document.createElement("div");
+    cartItem.className = "cart-item";
+    cartItem.innerHTML = `
+      <img src="/${item.image}" alt="${item.title}" style="width: 50px; height: 50px; margin-right: 10px;" />
+      <strong>${item.title}</strong> - ₹${item.price}
+      <button class="btn btn-danger btn-sm" onclick="removeItem(${index})">Remove</button>
+    `;
+    cartContainer.appendChild(cartItem);
+  });
+
+  cartTotalElement.textContent = `Total: ₹${total.toFixed(2)}`; // Display total with two decimals
+  checkoutButton.disabled = false;
+}
+
+
+  function removeItem(index) {
+    cartItems.splice(index, 1);
+    localStorage.setItem(cartKey, JSON.stringify(cartItems));
+    renderCart();
+  }
+
+  window.removeItem = removeItem;
+  renderCart();
+});
+
+
+  </script>
+  
+</body>
+</html>

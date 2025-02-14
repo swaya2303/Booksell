@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .book-details-card {
+      margin-top: 50px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: white;
+    }
+
+    .book-image {
+      max-height: 400px;
+      object-fit: cover;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .book-info {
+      padding: 20px;
+    }
+
+    .price-tag {
+      font-size: 1.5rem;
+      color: #28a745;
+      font-weight: bold;
+    }
+
+    .buy-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .buy-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .description {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="book-details" class="row justify-content-center">
+      <!-- Book details will be dynamically loaded here -->
+    </div>
+  </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    fetch('/get-session')
+      .then(response => response.json())
+      .then(data => {
+        if (!data.loggedIn) {
+          alert('You must be logged in to access this page.');
+          window.location.href = '/login.html';
+        } else {
+          loadBookDetails();
+        }
+      })
+      .catch(error => console.error("Error checking session:", error));
+  });
+  
+  function loadBookDetails() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const bookId = urlParams.get('id');
+
+    if (!bookId) {
+        document.getElementById('book-details').innerHTML = '<p>No book selected.</p>';
+        return;
+    }
+
+    fetch(`/api/book/${bookId}`)
+        .then(response => response.json())
+        .then(book => {
+            if (!book || Object.keys(book).length === 0) {
+                document.getElementById('book-details').innerHTML = '<p>Book details not found.</p>';
+                return;
+            }
+
+            const bookDetails = document.getElementById('book-details');
+            bookDetails.innerHTML = `
+                <div class="col-md-8">
+                    <div class="card book-details-card">
+                        <img src="/${book.images[0]}" class="card-img-top book-image" alt="${book.title}" />
+                        <div class="card-body book-info">
+                            <h1 class="card-title">${book.title}</h1>
+                            <p><strong>Author:</strong> ${book.author || "N/A"}</p>
+                            <p><strong>Category:</strong> ${book.book_type || "N/A"}</p>
+                            <p><strong>Description:</strong> ${book.description || "No description available."}</p>
+                            <p class="price-tag">Price: ₹${book.price || "Not listed"}</p>
+                            <button class="buy-btn" id="buy-now">Buy Now</button>
+                            <button class="chat-btn" id="chat-seller">Chat with Seller</button> <!-- ✅ Chat Button Added -->
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Buy Now event listener
+            document.getElementById('buy-now').addEventListener('click', async () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const bookId = urlParams.get('id');
+
+    try {
+        const response = await fetch('/buy-book', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({ bookId })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            alert("✅ Book bought successfully!");
+            window.location.href = `/checkout?bookId=${bookId}`;  // Redirect after purchase
+        } else {
+            alert(`❌ Purchase failed: ${data.message}`);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('❌ Failed to complete the purchase.');
+    }
+});
+
+
+
+            // ✅ Chat button event listener
+            document.getElementById('chat-seller').addEventListener('click', () => {
+                const loggedInUserId = sessionStorage.getItem('userId');
+                
+                if (!loggedInUserId) {
+                    alert('You must be logged in to chat.');
+                    window.location.href = '/login.html';
+                    return;
+                }
+
+                if (!book.userId || book.userId === loggedInUserId) {
+                    alert("You cannot chat with yourself or the seller's ID is missing.");
+                    return;
+                }
+
+                window.location.href = `/chat.html?receiverId=${book.userId}`;
+            });
+        })
+        .catch(error => console.error('Error loading book details:', error));
+}
+
+      //  // "Chat with Seller" button event listener
+      //  document.getElementById('chat-seller').addEventListener('click', () => {
+      //           const loggedInUserId = sessionStorage.getItem('userId');
+                
+      //           if (!loggedInUserId) {
+      //               alert('You must be logged in to chat.');
+      //               window.location.href = '/login.html';
+      //               return;
+      //           }
+
+      //           window.location.href = `/chat.html?receiverId=${book.userId}`;
+      //       });
+  
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

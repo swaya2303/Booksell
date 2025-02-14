@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seller Notifications</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .notification-bar {
+      position: fixed;
+      top: 0;
+      right: 10px;
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 10px;
+      display: none;
+      border: 1px solid #f5c6cb;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Seller Notifications</h1>
+  <div id="notifications"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Establish SSE connection
+      const eventSource = new EventSource('/notifications/stream');
+  
+      // Handle incoming notifications
+      eventSource.onmessage = (event) => {
+        const notification = JSON.parse(event.data);
+        alert(notification.message);  // Show alert for new notification
+        loadNotifications();          // Refresh notifications list
+      };
+  
+      eventSource.onerror = (error) => {
+        console.error('SSE connection error:', error);
+        eventSource.close();
+      };
+  
+      loadNotifications();  // Load existing notifications on page load
+    });
+  
+    async function loadNotifications() {
+    const response = await fetch('/seller/notifications', { credentials: 'include' });
+    const data = await response.json();
+    if (data.success) {
+        const notificationsDiv = document.getElementById('notifications');
+        notificationsDiv.innerHTML = data.notifications.map(notif =>
+            `<div class="notification">${notif.message} - 
+            <small>${new Date(notif.timestamp).toLocaleString()}</small>
+            </div>`
+        ).join('');
+
+        // Mark notifications as seen
+        await fetch('/seller/notifications/mark-seen', { method: 'POST', credentials: 'include' });
+    }
+}
+
+  </script>
+  
+  
+</body>
+</html>
